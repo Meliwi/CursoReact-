@@ -1,0 +1,29 @@
+.BadgesListItems{
+    display: flex;
+    border: 1px solid #e0e0e5;
+     border-radius: 45px 45px 45px 45px;
+    -moz-border-radius: 45px 45px 45px 45px;
+    -webkit-border-radius: 45px 45px 45px 45px; 
+    padding: 18px;
+    -webkit-box-shadow: 4px 5px 20px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 5px 20px -1px rgba(0,0,0,0.75);
+    box-shadow: 4px 5px 20px -1px rgba(0,0,0,0.75);
+
+}
+
+.BadgesListItem_avatar{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius:150px;
+}
+
+.Badge__Data{
+    padding-left:19px ;
+}
+
+.Twitter__font{
+    color: #00acee;
+
+}
+
+
