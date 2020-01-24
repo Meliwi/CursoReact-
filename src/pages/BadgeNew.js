@@ -31,7 +31,6 @@ class BadgeNew extends React.Component {
         <div className="BadgeNew__hero">
           <img className="img-fluid" src={header} alt="Logo" />
         </div>
-
         <div className="container">
           <div className="row">
             <div className="col-6">
