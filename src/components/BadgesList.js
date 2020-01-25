@@ -1,8 +1,20 @@
 import React from 'react';
 import './styles/BadgesList.css'
+import Gravatar from './Gravatar.js';
 
 class BadgesList extends React.Component{
     render(){
+        if(this.props.badges.length===0){
+            return (
+                <div>
+                    <h3>No badges were found</h3>
+                    <a className="btn btn-primary" href="
+                    /badges/new">
+                        Creat new badge
+                    </a>
+                </div>
+            )
+        }
         return (
             <div >
                 <ul className="list-unstyled"> 
@@ -10,10 +22,9 @@ class BadgesList extends React.Component{
                 return(
                     <li key={badge.id}>
                        <div className="BadgesListItems">
-                            <img 
+                            <Gravatar
                                 className="BadgesListItem_avatar"
-                                src = {badge.avatarUrl}
-                                alt="avatar"
+                                email={badge.email}
                             />
                             <div className="Badge__Data">
                                 <strong>

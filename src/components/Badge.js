@@ -2,6 +2,7 @@
 import React from 'react';
 import confLogo from '../images/badge-header.svg';
 import "./styles/Badge.css";
+import Gravatar from './Gravatar.js';
 
 
 //A react no le gusta que useemos class para nuestros elementos
@@ -20,9 +21,11 @@ class Badge extends React.Component{
            </div>
 
            <div className="Badge__section-name">
-               <img className="Badge__avatar" 
-               src = "https://image.freepik.com/vector-gratis/buen-astronauta-equipo-kawaii-avatar_24640-31.jpg" 
-               alt="Avatar" />
+               <Gravatar
+                 className="Badge__avatar"
+                 email={this.props.email}
+                 alt="avatar"
+               />
              <h1>{this.props.firstName} <br/> {this.props.lastName}</h1>
            </div>
            <div className="Badge__section-info">

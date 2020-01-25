@@ -21,11 +21,13 @@ async function callApi(endpoint, options = {}) {
   return data;
 }
 
-//La api del archivo -> la estrella 
+//La api del archivo -> la estrella
 const api = {
   badges: {
     list() {
-      return callApi('/badges');
+        //Simulando un error 500
+        // throw new Error('500: server Error');
+        return callApi('/badges');
     },
     create(badge) {
       return callApi(`/badges`, {
