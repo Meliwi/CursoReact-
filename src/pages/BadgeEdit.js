@@ -10,7 +10,7 @@ import api from '../api';
 
 class BadgeEdit extends React.Component {
   state = {
-    loading: false,
+    loading: true,
     error:null,
     form: {
       firstName: '',
@@ -20,6 +20,27 @@ class BadgeEdit extends React.Component {
       twitter: '',
     },
   };
+
+  //Cuando este componente ocurra vamos a pedir los datos
+  componentDidMount(){
+    this.fetchData()
+  }
+
+  fetchData = async e =>{
+    this.setState({loading:true, error: null})
+
+    try {
+      const data = await api.badges.read(
+        //Leer el id de la URL 
+        this.props.match.params.badgeId
+      )
+      this.setState({loading:false, form:data})
+    }
+    //En caso de que ocurra un error
+    catch(error){
+      this.setState({loading:false, error:error})
+    }
+  }
 
   handleChange = e => {
     this.setState({
@@ -36,7 +57,7 @@ class BadgeEdit extends React.Component {
 
     try {
       
-      await api.badges.create(this.state.form);
+      await api.badges.update(this.props.match.params.badgeId, this.state.form);
       this.setState({ loading: false });
       //Para regresar automaticamente a la lista de badges
       this.props.history.push('/badges');
@@ -78,6 +99,7 @@ class BadgeEdit extends React.Component {
             </div>
 
             <div className="col-6">
+              <h1>Edit Attendant</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}

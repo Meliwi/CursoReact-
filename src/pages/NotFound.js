@@ -7,7 +7,7 @@ class NotFound extends React.Component{
             <div class="NotFound">
                 <div className="NotFound-ImageContainer">
                     <img className="NotFound_Image" 
-                    src = "https://estudioinfinite.es/wp-content/uploads/2019/04/astronauta-volando-dibujos-animados-by-Vexels.png" 
+                    src = "https://estudioinfinite.es/wp-content/uploads/2019/04/ae0fc81df564354bb6b22d3b4fca7e85-astronauta-con-bandera-de-dibujos-animados-by-vexels.png" 
                     alt="NotFound" />
                 </div> 
                 <div className="text__NotFound">
